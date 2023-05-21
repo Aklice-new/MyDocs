@@ -60,7 +60,7 @@
 
   
 
-- 静态申请 __shared__ float a_[10][10];
+- 静态申请 __shared__ float a[10][10];
 
 - 动态申请 extern float a; 然后再启动核函数时加入空间 kernel<<<grid,block,size*sizeof(int)>>>()；（没用过，等会试试）
 

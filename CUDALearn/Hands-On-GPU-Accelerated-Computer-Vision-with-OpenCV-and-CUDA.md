@@ -96,3 +96,19 @@ https://blog.csdn.net/tiao_god/article/details/107181883。
 可以定义1D / 2D / 3D三种方式的纹理内存，纹理内存时只读内存，如果在当前线程访问过程中可能会同时访问临近区域或线程的数据，可以使用该内存来提高访问效率，如图像滤波。
 
 通过 texture<float, dim(1,2,3), cudaReadModeElementType> name;
+
+
+# Chapter4
+
+## CUDA Event
+
+使用Cuda Event来对cuda的性能进行测试，使用普通的cpu的计时方法也是可以的，但是cudaEvent是在GPU上进行计时的，所以理论上更准一些。这里这篇博客不错[https://blog.csdn.net/litdaguang/article/details/77585011]。
+
+cudaEvent_t 声明一个事件。
+cudaEventCreate 
+cudaEventRecord 进行记录
+
+## CUDA Error Handling
+
+书中所讲的是通过cudaError_t cudaStatus;来获得每条CUDA语句的执行结果。然后还可以通过sample文件夹中的helper_cuda.h中的错误检测来进行。这里有篇博客[https://stackoverflow.com/questions/14038589/what-is-the-canonical-way-to-check-for-errors-using-the-cuda-runtime-api]
+

@@ -12,6 +12,13 @@
 
 一个grid中有很多的block，然后block中又有很多的thread。grid可以是多维的，但是在计算thread的时候就需要注意了。如果grid是1维且每个block中只有一个thread，那么每次取threadid的时候就可以通过 blockIdx.x来取得。如果是二维的话，就可以 threadIdx.x + blockIdx.x * blockDim.x。具体的计算过程百度。还可以三维。<<<block的块数， 每个block中的线程数>>>，还有一点，在block中还有一个概念叫warp，每个warp中的线程是同步的，在设计的时候尽量线程数是32的倍数。
 
+#### 关于 grid 和block的声明定义
+
+一般定义grid和block的时候是通过dim3类型的变量来进行了，但是有时候直接使用了一维的所以直接给了一个int类型的值进去。
+可以看看这篇博客中的图，方便理解。
+https://blog.csdn.net/tiao_god/article/details/107181883。
+
+
   
 
 ## 原子操作

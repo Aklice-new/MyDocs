@@ -126,6 +126,16 @@
               "type": "git-view",
               "state": {}
             }
+          },
+          {
+            "id": "3a387ac77ed77047",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md"
+              }
+            }
           }
         ],
         "currentTab": 3

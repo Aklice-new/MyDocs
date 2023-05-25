@@ -112,3 +112,14 @@ cudaEventRecord 进行记录
 
 书中所讲的是通过cudaError_t cudaStatus;来获得每条CUDA语句的执行结果。然后还可以通过sample文件夹中的helper_cuda.h中的错误检测来进行。这里有篇博客[https://stackoverflow.com/questions/14038589/what-is-the-canonical-way-to-check-for-errors-using-the-cuda-runtime-api]
 
+## CUDA Stream
+
+cudaHostAlloc / cudaMallocHost， 因为普通的通过么melloc申请的空间在和GPU数据进行拷贝的时候申请的是分页内存，地址不固定，在拷贝前还需要进行一次拷贝，将分页内存拷贝到锁定内存中，使用cudaHostAlloc/cudaMellocHost可以直接申请锁页内存，可以少一次拷贝。
+
+### 零拷贝
+一般来说GPU无法直接访问CPU的内存，但是可以通过零拷贝进行隐式的进行拷贝。
+零拷贝具有以下的优势：
+- 当设备内存不够的时候可以通过零拷贝申请多的空间，因为在运行过程中是进行拷贝的。
+- 避免主机和设备之间之间进行数据的拷贝。
+关于内存这块有篇博客[herf = 'https://zhuanlan.zhihu.com/p/188246455']
+

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-06-12.md",
+                "file": "2023-06-14.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-06-12.md",
+                "file": "2023-06-14.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-06-12.md",
+                "file": "2023-06-14.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-06-12.md"
+                "file": "2023-06-14.md"
               }
             }
           }
@@ -156,8 +156,9 @@
   },
   "active": "a891c24846932a49",
   "lastOpenFiles": [
-    "2023-06-09.md",
     "2023-06-12.md",
+    "2023-06-14.md",
+    "2023-06-09.md",
     "2023-06-07.md",
     "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
     "2023-06-06.md",

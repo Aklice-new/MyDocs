@@ -19,9 +19,11 @@
             "id": "06eaeb4fb44b412f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.4.5"
+                "file": "2023-09-04.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "2023-09-04.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "2023-09-04.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +141,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "2023-09-04.md"
+              }
             }
           }
         ]
@@ -159,6 +165,7 @@
   },
   "active": "06eaeb4fb44b412f",
   "lastOpenFiles": [
+    "2023-09-04.md",
     "2023-07-22.md",
     "2023-06-29.md",
     "2023-06-14.md",

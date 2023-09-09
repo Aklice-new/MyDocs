@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-09-08.md",
+                "file": "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-09-08.md",
+                "file": "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-09-08.md",
+                "file": "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-09-08.md"
+                "file": "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md"
               }
             }
           }
@@ -156,8 +156,9 @@
   },
   "active": "06eaeb4fb44b412f",
   "lastOpenFiles": [
-    "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
     "2023-09-08.md",
+    "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
+    "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
     "2023-09-05.md",
     "2023-09-04.md",
     "2023-07-22.md",

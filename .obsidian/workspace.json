@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#描述",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -165,8 +164,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "4787e11880346a7d",
+  "active": "29fc319670c40568",
   "lastOpenFiles": [
+    "CUDALearn/Cuda Samples 11.8/images/asyncAPI.png",
+    "CUDALearn/Cuda Samples 11.8/images/2023-09-19 23-12-41 的屏幕截图.png",
+    "CUDALearn/Cuda Samples 11.8/images/未命名",
+    "CUDALearn/Cuda Samples 11.8/images",
     "CUDALearn/Cuda Samples 11.8/开篇总结.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/asyncAPI.md",
     "CUDALearn/Cuda Samples 11.8/1_Utilities",

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-09-25.md",
+                "file": "2023-09-28.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-09-25.md",
+                "file": "2023-09-28.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-09-25.md",
+                "file": "2023-09-28.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-09-25.md"
+                "file": "2023-09-28.md"
               }
             }
           },
@@ -166,8 +166,9 @@
   },
   "active": "af6e96c6678d43c5",
   "lastOpenFiles": [
-    "CUDALearn/Cuda Samples 11.8/0_Introduction/clock.md",
     "2023-09-25.md",
+    "2023-09-28.md",
+    "CUDALearn/Cuda Samples 11.8/0_Introduction/clock.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/asyncAPI.md",
     "CUDALearn/Cuda Samples 11.8/images/c++11_cuda.png",

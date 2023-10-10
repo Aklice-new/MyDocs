@@ -1,5 +1,5 @@
 
-
+## 一些有用的第三方库的简单学习
 # tinny-cuda-nn
 
 1. 封装起来的管理GPU内存的工具 gpu_memory.h
@@ -91,3 +91,8 @@ cudaTextureObject_t texture;
 
 CUDA_CHECK_THROW(cudaCreateTextureObject(&texture, &resDesc, &texDesc, nullptr));
 ```
+
+## fmt  开源的格式化输出的库
+
+可以很方便的替代cout这个垃圾玩意。
+

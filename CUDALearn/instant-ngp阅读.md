@@ -51,3 +51,43 @@ out[i] = (uint8_t)(powf(fmaxf(fminf(in[pixel * stride + channel], 1.0f), 0.0f), 
 // 启动的时候使用的是
 linear_kernel(to_ldr<T>, 0, nullptr, width * height * n_channels, n_channels, channel_stride, image, image_ldr.data());
 ```
+3. 使用cuda封装好的内存对象：cudaResourceDesc、cudaTextureDesc、cudaTextureObject_t ，。
+```cpp
+cudaResourceDesc resDesc;
+
+memset(&resDesc, 0, sizeof(resDesc));
+
+resDesc.resType = cudaResourceTypePitch2D;
+
+resDesc.res.pitch2D.devPtr = image.data();
+
+resDesc.res.pitch2D.desc = cudaCreateChannelDesc(32, 32, 32, 32, cudaChannelFormatKindFloat);
+
+resDesc.res.pitch2D.width = width;
+
+resDesc.res.pitch2D.height = height;
+
+resDesc.res.pitch2D.pitchInBytes = width * 4 * sizeof(float);
+
+  
+
+cudaTextureDesc texDesc;
+
+memset(&texDesc, 0, sizeof(texDesc));
+
+texDesc.filterMode = cudaFilterModeLinear;
+
+texDesc.normalizedCoords = true;
+
+texDesc.addressMode[0] = cudaAddressModeClamp;
+
+texDesc.addressMode[1] = cudaAddressModeClamp;
+
+texDesc.addressMode[2] = cudaAddressModeClamp;
+
+  
+
+cudaTextureObject_t texture;
+
+CUDA_CHECK_THROW(cudaCreateTextureObject(&texture, &resDesc, &texDesc, nullptr));
+```

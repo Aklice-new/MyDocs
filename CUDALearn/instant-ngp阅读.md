@@ -95,4 +95,11 @@ CUDA_CHECK_THROW(cudaCreateTextureObject(&texture, &resDesc, &texDesc, nullptr))
 ## fmt  开源的格式化输出的库
 
 可以很方便的替代cout这个垃圾玩意。
+关于具体的使用example不在赘述，[https://github.com/fmtlib/fmt] 这个主页有一些说明。
+需要注意的是在使用过程中，fmt是可以header only的，但是需要在使用过程中加入宏定义说明
+``` cpp
 
+#define FMT_HEADER_ONLY // 注意就是这个宏定义。不然会报错。
+#include <fmt/format.h>
+
+```

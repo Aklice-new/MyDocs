@@ -49,11 +49,55 @@ std::cout << tuple_index(t, i) << std::endl;
 但是标准库对tuple的支持很少，使用很有限。
 
 
-# 智能指针与内存管理
+# 第5章  智能指针与内存管理
 ## RAII与引用计数
 
 RAII（**R**esource **A**cquisition **I**s **I**nitialization），在构造的时候申请资源，在析构的时候释放资源。
 
 ### shared_ptr
 
+shared_ptr 是一种智能指针，能记录多少个shared_ptr 共同指向了同一个对象，从而消除显式的调用delete，当计数器变为0时，会自动将对象删除。
+
+make_shared 进行构造 c++ 11
 ### unique_ptr
+
+std::unique_ptr是一种独占的智能指针， 它禁止其他智能指针与其共同指向同一个对象，保证了代码的安全性。所以在转移的时候由于独占性，不能直接复制给其他指针，而是通过std::move()进行对象的移动。
+
+make_unique 是在c++ 14中才出现的，因为11的时候忘了。
+
+### weak_ptr 
+不太常用，有点复杂。是为了解决 shared_ptr中可能会出现的问题。
+
+## 第6章 正则表达式
+
+std::regex 包含在头文件库 regex 中。
+
+### 使用方法
+
+```cpp
+
+// 1
+std::string fnames[] = {"foo.txt", "bar.txt", "test", "a0.txt", "AAA.txt"};
+std::string fnames = "aslfaj.txt"; // 待匹配字符串
+std::regex txt_regex("[a-z]+\\.txt"); // 正则表达式
+std::cout << std::regex_match(fname[0], txt_regex) << std::endl; // 匹配结果
+
+// 2
+
+std::regex base_regex("([a-z]+)\\.txt");
+std::smatch base_match;
+for(const auto &fname: fnames) {
+	if (std::regex_match(fname, base_match, base_regex)) {
+	// std::smatch 的第一个元素匹配整个字符串
+	// std::smatch 的第二个元素匹配了第一个括号表达式
+	if (base_match.size() == 2) {
+		std::string base = base_match[1].str();
+		std::cout << "sub-match[0]: " << base_match[0].str() << std::endl;
+		std::cout << fname << " sub-match[1]: " << base << std::endl;
+	}
+}
+}
+```
+看了[https://zhihu.com/question/23070203/answer/84248248] 这个原作者说，由于regex的实现是基于递归的，所以有可能爆栈。
+
+

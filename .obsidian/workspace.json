@@ -18,19 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "28235751e2cfdf13",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.16"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -176,7 +165,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "28235751e2cfdf13",
+  "active": "af6e96c6678d43c5",
   "lastOpenFiles": [
     "CUDALearn/instant-ngp阅读.md",
     "CPP/morden C++.md",

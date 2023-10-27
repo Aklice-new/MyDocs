@@ -101,3 +101,12 @@ for(const auto &fname: fnames) {
 看了[https://zhihu.com/question/23070203/answer/84248248] 这个原作者说，由于regex的实现是基于递归的，所以有可能爆栈。
 
 
+## 第7章 并行与并发
+
+### 互斥量与临界区
+
+std::mutex 是C++11中的mutex类，可以用于创建互斥量，通过lock(),unlock()进行上锁和解锁。
+
+C++11提供了一个RAII的类，std::lock_guard 模板类用于简化加锁和解锁的过程。
+
+当在lock的作用域内保证互斥，但是离开

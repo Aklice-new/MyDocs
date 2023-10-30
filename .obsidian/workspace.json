@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CPP/morden C++.md",
+                "file": "SLAM/SLAM 14讲 高翔.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CPP/morden C++.md",
+                "file": "SLAM/SLAM 14讲 高翔.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CPP/morden C++.md",
+                "file": "SLAM/SLAM 14讲 高翔.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CPP/morden C++.md"
+                "file": "SLAM/SLAM 14讲 高翔.md"
               }
             }
           },
@@ -165,12 +165,14 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "87eabf330fa52f35",
+  "active": "af6e96c6678d43c5",
   "lastOpenFiles": [
+    "CPP/morden C++.md",
+    "SLAM/SLAM 14讲 高翔.md",
+    "SLAM",
     "CPP/imgs",
     "2023-10-26.md",
     "README.md",
-    "CPP/morden C++.md",
     "CUDALearn/instant-ngp阅读.md",
     "CPP",
     "2023-09-28.md",

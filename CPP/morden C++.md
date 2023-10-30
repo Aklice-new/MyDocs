@@ -109,4 +109,42 @@ std::mutex 是C++11中的mutex类，可以用于创建互斥量，通过lock(),u
 
 C++11提供了一个RAII的类，std::lock_guard 模板类用于简化加锁和解锁的过程。
 
-当在lock的作用域内保证互斥，但是离开
+当在lock的作用域内保证互斥，但是离开作用域之后会自动析构并解锁。
+
+C++ 17还提出了一个scoped_lock ，unique_lock，关于这三个锁的使用策略，可以看看这篇blog。[https://stackoverflow.com/questions/43019598/stdlock-guard-or-stdscoped-lock]
+
+
+## 期物
+
+std::future 提供了一个访问异步操作结果的方法。 一般如果让主线程A去开辟一个子线程B，然后让B返回一个结果，但是A没有时间去等待B的结果，一般来说会让B将结果保存在全局变量中，然后A需要这个结果的时候，直接去等待B的结果即可。
+
+std:: future 则简化了这个流程，可以用于获取异步任务的结果。
+
+std::packaged_task 用于封装任何可以调用的目标，使用get_future()可以获取一个std::future对象。
+
+```cpp
+#include <iostream>
+#include <future>
+#include <thread>
+int main() {
+// 将一个返回值为 7 的 lambda 表达式封装到 task 中
+// std::packaged_task 的模板参数为要封装函数的类型
+std::packaged_task<int()> task([](){return 7;});
+// 获得 task 的期物
+std::future<int> result = task.get_future(); // 在一个线程中执行 task
+std::thread(std::move(task)).detach();
+std::cout << "waiting...";
+result.wait(); // 在此设置屏障，阻塞到期物的完成
+// 输出执行结果
+	std::cout << "done!" << std:: endl << "future result is " << result.get() << std::endl;
+		return 0;
+}
+```
+
+
+## 条件变量
+
+std::condition_variable 是为了解决死锁而产生，当互斥操作不够用而引入的。
+std::condition_variable的notify_one() 用于唤醒一个线程。
+std::condition_variable的notify_all() 用于通知所有线程。
+

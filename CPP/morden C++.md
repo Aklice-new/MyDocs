@@ -169,6 +169,65 @@ std::atomic模板，可以实例化一个原子类型，在cpu指令级别解决
 
 # 第9章 其他杂项
 
+#### 新类型
+long long int 
 
+#### noexcept 的修饰和操作
 
+使用noexcept修饰函数可以对函数的异常行为进行限制。
 
+同时还能作为操作符对函数的异常进行进行控制，防止异常扩散而导致程序终止。
+
+#### 字面量
+
+在windows中文件路径可能会因为转义字符而导致路径被转义， C++ 11 提供了原始字符串字面量的写法，可以在字符串前方加一个R来修饰字符串，然后使用括号将原始字符串包裹。
+
+```cpp
+std::string str = R"(C:\File\To\Path)"; //这样使用
+```
+
+同时还提供了自定义字面量的能力，通过重载双引号后缀运算符来实现。
+```cpp
+// 字符串字面量自定义必须设置如下的参数列表
+std::string operator"" _wow1(const char *wow1, size_t len) {
+	return std::string(wow1)+"woooooooooow, amazing";
+}
+std::string operator"" _wow2 (unsigned long long i) {
+	return std::to_string(i)+"woooooooooow, amazing";
+}
+int main() {
+	auto str = "abc"_wow1;
+	auto num = 1_wow2;
+	std::cout << str << std::endl;
+	std::cout << num << std::endl;
+	return 0;
+}
+```
+#### 内存对齐
+
+C++ 11 引入了两个关键字 alignof 和 alignas来支持内存对齐的功能。
+
+```cpp
+struct Node{
+	int a;
+	double b;
+	long long c;
+};
+
+struct alignas(std::max_align_t) AlignasNode{
+	int a;
+	double b;
+	long long c;
+};
+
+int main(){
+	std::cout << alignof(Node) <<std::endl;
+	std::cout << alignof(AlignasNode) << std::endl;
+	return 0;
+}
+
+输出为：
+8
+16
+
+```

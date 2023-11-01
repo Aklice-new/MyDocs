@@ -48,3 +48,38 @@ SLAM的两个主要问题， 1. 明白自身的状态（位置）， 2. 了解�
 ### 畸变模型
 
 
+
+# 第6章 非线性优化
+
+
+
+### 实操：曲线拟合
+
+曲线方程： 
+$y = exp(ax^2 + bx + c) + w$
+其中$a, b, c$ 为曲线参数， $w$为高斯噪声 $w \thicksim (0, \sigma^2)$
+我们有$N$个关于$x, y$的观测值，我们想根据这些数据点估计出曲线的参数，可以通过下面的最小二乘问题估计曲线的参数：
+
+$min_{a, b,c} \frac{1}{2} \sum_{i = 1}^{N}\|y_i - exp(ax^2_i + bx_i + c)\|^2$
+
+然后定义误差为 $f(e_i)$：
+
+$e_i = y_i - exp(ax^2_i + bx_i + c)$
+
+然后可以求出每个误差项对于状态变量的导数， 也就是$a, b, c$的偏导数。
+$\frac{\partial e_i}{a} = - x_i^2exp(ax^2_i + bx_i + c)$
+$\frac{\partial e_i}{b} =- x_iexp(ax^2_i + bx_i + c)$
+$\frac{\partial e_i}{c} =-exp(ax^2_i + bx_i + c)$
+
+#### 高斯牛顿法：
+
+#### Ceres求解：
+
+
+
+
+
+
+
+
+

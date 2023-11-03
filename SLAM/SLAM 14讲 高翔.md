@@ -84,7 +84,3 @@ $\frac{\partial e_i}{c} =-exp(ax^2_i + bx_i + c)$
 
 
 
-
-
-
-

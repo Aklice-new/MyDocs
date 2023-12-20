@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3eb9a1a0077b01b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3D Gaussian Splatting 学习.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "3D Gaussian Splatting 学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "3D Gaussian Splatting 学习.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "3D Gaussian Splatting 学习.md"
               }
             }
           },
@@ -165,8 +178,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "af6e96c6678d43c5",
+  "active": "3eb9a1a0077b01b9",
   "lastOpenFiles": [
+    "assets/3d_gaussian_2.png",
+    "assets/2023-12-20 20-34-11 的屏幕截图.png",
+    "assets/3d_gaussian_1.png",
+    "assets/2023-12-20 20-30-36 的屏幕截图.png",
+    "assets",
+    "README.md",
+    "3D Gaussian Splatting 学习.md",
+    "未命名",
     "SLAM/SLAM 14讲 高翔.md",
     "SLAM/imgs/7-3 figure 5.png",
     "SLAM/imgs/2023-11-14 11-03-27 的屏幕截图.png",
@@ -175,16 +196,12 @@
     "SLAM/imgs/7-2 figure3.png",
     "SLAM/imgs/2023-11-07 16-39-16 的屏幕截图.png",
     "SLAM/imgs/7-2 figure2.png",
-    "SLAM/imgs/2023-11-07 16-18-00 的屏幕截图.png",
-    "SLAM/imgs/7-2 figure1.png",
-    "SLAM/imgs/2023-11-07 16-01-08 的屏幕截图.png",
     "SLAM/imgs",
     "CPP/morden C++.md",
     "2023-10-30.md",
     "2023-10-26.md",
     "SLAM",
     "CPP/imgs",
-    "README.md",
     "CUDALearn/instant-ngp阅读.md",
     "CPP",
     "2023-09-28.md",
@@ -205,12 +222,9 @@
     "CUDALearn/Cuda Samples 11.8/0_Introduction",
     "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
     "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
-    "CUDALearn/Cuda Samples 11.8",
     "2023-09-08.md",
     "2023-09-04.md",
     "2023-06-29.md",
-    "2023-06-14.md",
-    "2023-06-09.md",
-    "CUDALearn"
+    "2023-06-14.md"
   ]
 }

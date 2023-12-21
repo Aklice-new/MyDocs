@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3D Gaussian Splatting 学习.md",
+                "file": "Avatar/Papers.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3D Gaussian Splatting 学习.md",
+                "file": "Avatar/Papers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3D Gaussian Splatting 学习.md",
+                "file": "Avatar/Papers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3D Gaussian Splatting 学习.md"
+                "file": "Avatar/Papers.md"
               }
             }
           },
@@ -180,14 +180,15 @@
   },
   "active": "3eb9a1a0077b01b9",
   "lastOpenFiles": [
+    "Avatar/3D Gaussian Splatting 学习.md",
+    "Avatar/Papers.md",
+    "Avatar",
     "assets/3d_gaussian_2.png",
     "assets/2023-12-20 20-34-11 的屏幕截图.png",
     "assets/3d_gaussian_1.png",
     "assets/2023-12-20 20-30-36 的屏幕截图.png",
     "assets",
     "README.md",
-    "3D Gaussian Splatting 学习.md",
-    "未命名",
     "SLAM/SLAM 14讲 高翔.md",
     "SLAM/imgs/7-3 figure 5.png",
     "SLAM/imgs/2023-11-14 11-03-27 的屏幕截图.png",
@@ -195,7 +196,6 @@
     "SLAM/imgs/2023-11-14 10-42-02 的屏幕截图.png",
     "SLAM/imgs/7-2 figure3.png",
     "SLAM/imgs/2023-11-07 16-39-16 的屏幕截图.png",
-    "SLAM/imgs/7-2 figure2.png",
     "SLAM/imgs",
     "CPP/morden C++.md",
     "2023-10-30.md",

@@ -21,4 +21,21 @@
 4. 计算每个像素的颜色  forward.cu renderCUDA()
 其中preprocessCUDA函数包含了前两个部分的内容。
 
+最后得到的是render之后的彩色图像。
+## diff_gaussian_rasterizatoin/cuda_rasterzier/forward.cu 反向传播部分
+- output:  
+p_rgb(P, 3)  p = pixel
+- inputs:  
+g_point 3dposition (G, 3)
+g_rgb color  (G, 3)
+g_rotation 四元数 (G, 4)
+g_scale 三个方向轴的长度 (G, 3)
+g_opacity 透明度 (G, 1)
+
+Loss 是定义的损失项， L1是gr和render出来的图片的误差。
+反向传播的值就是$\frac{dLoss}{dP_{rgb}}$， $P_{rgb}$是$P * 3$的tensor，
+所以要求偏微分：$\frac{dLoss}{dG_{position}},\frac{dLoss}{dG_{position}}, \frac{dLoss}{dG_{rgb}},\frac{dLoss}{dG_{rotation}},\frac{dLoss}{dG_{scale}},\frac{dLoss}{dG_{opacity}}$
+通过链式求导法则，
+
+
 

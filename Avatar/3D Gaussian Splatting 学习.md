@@ -11,4 +11,14 @@
 
 
 
+## cuda 代码学习
+
+## diff_gaussian_rasterizatoin/cuda_rasterzier/forward.cu 前向传播部分
+ 整个前向传播的过程为：
+1. 计算Gaussian球投影出来的近似圆
+2. 计算这个圆覆盖了哪些像素格子
+3. 计算每个gaussian球覆盖像素格子的前后顺序
+4. 计算每个像素的颜色
+其中preprocessCUDA函数包含了前两个部分的内容。
+
 

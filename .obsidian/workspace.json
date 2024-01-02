@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "089b414af5e9c42f",
+        "id": "2992714ef0ef541e",
         "type": "tabs",
         "children": [
           {
-            "id": "af6e96c6678d43c5",
+            "id": "b641d059f52eacfb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "PathSim.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "PathSim.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "PathSim.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "PathSim.md"
+              }
             }
           },
           {
@@ -135,7 +143,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -157,8 +167,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "af6e96c6678d43c5",
+  "active": "b641d059f52eacfb",
   "lastOpenFiles": [
+    "PathSim.md",
     "2023-06-14.md",
     "2023-06-12.md",
     "2023-06-06.md",
@@ -203,7 +214,6 @@
     "CUDALearn/Cuda Samples 11.8/0_Introduction",
     "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
     "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
-    "2023-09-08.md",
-    "2023-09-04.md"
+    "2023-09-08.md"
   ]
 }

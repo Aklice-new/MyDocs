@@ -11,11 +11,9 @@
             "id": "b641d059f52eacfb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "PathSim.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/3d_gaussian_2.png"
               }
             }
           }
@@ -69,8 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242.5,
-    "collapsed": true
+    "width": 242.5
   },
   "right": {
     "id": "2dcf9fa4a1ac9231",
@@ -86,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PathSim.md",
+                "file": "assets/3d_gaussian_2.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PathSim.md",
+                "file": "assets/3d_gaussian_2.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PathSim.md"
+                "file": "assets/3d_gaussian_2.png"
               }
             }
           },
@@ -170,6 +167,13 @@
   },
   "active": "b641d059f52eacfb",
   "lastOpenFiles": [
+    "assets/3d_gaussian_1.png",
+    "CPP/morden C++.md",
+    "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",
+    "CUDALearn/Cuda Samples 11.8/0_Introduction/clock.md",
+    "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
+    "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
+    "CUDALearn/instant-ngp阅读.md",
     "PathSim.md",
     "2023-06-14.md",
     "2023-06-12.md",
@@ -183,7 +187,6 @@
     "Avatar",
     "assets/3d_gaussian_2.png",
     "assets/2023-12-20 20-34-11 的屏幕截图.png",
-    "assets/3d_gaussian_1.png",
     "assets/2023-12-20 20-30-36 的屏幕截图.png",
     "assets",
     "SLAM/SLAM 14讲 高翔.md",
@@ -194,27 +197,20 @@
     "SLAM/imgs/7-2 figure3.png",
     "SLAM/imgs/2023-11-07 16-39-16 的屏幕截图.png",
     "SLAM/imgs",
-    "CPP/morden C++.md",
     "2023-10-26.md",
     "SLAM",
     "CPP/imgs",
-    "CUDALearn/instant-ngp阅读.md",
     "CPP",
     "2023-09-28.md",
     "2023-09-05.md",
     "2023-09-15.md",
     "2023-09-25.md",
     "2023-07-22.md",
-    "CUDALearn/Cuda Samples 11.8/0_Introduction/clock.md",
-    "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/asyncAPI.md",
     "CUDALearn/Cuda Samples 11.8/images/未命名",
     "CUDALearn/Cuda Samples 11.8/images",
     "CUDALearn/Cuda Samples 11.8/开篇总结.md",
     "CUDALearn/Cuda Samples 11.8/1_Utilities",
-    "CUDALearn/Cuda Samples 11.8/0_Introduction",
-    "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
-    "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
-    "2023-09-08.md"
+    "CUDALearn/Cuda Samples 11.8/0_Introduction"
   ]
 }

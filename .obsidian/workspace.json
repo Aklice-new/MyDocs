@@ -11,9 +11,11 @@
             "id": "b641d059f52eacfb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/3d_gaussian_2.png"
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -67,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242.5
+    "width": 242.5,
+    "collapsed": true
   },
   "right": {
     "id": "2dcf9fa4a1ac9231",
@@ -83,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/3d_gaussian_2.png",
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "assets/3d_gaussian_2.png",
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "assets/3d_gaussian_2.png"
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md"
               }
             }
           },
@@ -148,7 +151,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -167,6 +170,8 @@
   },
   "active": "b641d059f52eacfb",
   "lastOpenFiles": [
+    "assets/3d_gaussian_2.png",
+    "CUDALearn/CUDA C++ Best Practices Guide.md",
     "assets/3d_gaussian_1.png",
     "CPP/morden C++.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",
@@ -185,7 +190,6 @@
     "README.md",
     "Avatar/3D Gaussian Splatting 学习.md",
     "Avatar",
-    "assets/3d_gaussian_2.png",
     "assets/2023-12-20 20-34-11 的屏幕截图.png",
     "assets/2023-12-20 20-30-36 的屏幕截图.png",
     "assets",
@@ -209,7 +213,6 @@
     "CUDALearn/Cuda Samples 11.8/0_Introduction/asyncAPI.md",
     "CUDALearn/Cuda Samples 11.8/images/未命名",
     "CUDALearn/Cuda Samples 11.8/images",
-    "CUDALearn/Cuda Samples 11.8/开篇总结.md",
     "CUDALearn/Cuda Samples 11.8/1_Utilities",
     "CUDALearn/Cuda Samples 11.8/0_Introduction"
   ]

@@ -60,6 +60,11 @@ $$((2048 ^ 2 \div 4 \times 2) \div 10^9) \div time$$
 这两者的比较可以有效的看出Global Memory被浪费了多少资源，对于Global Memory访问，这种请求的内存带宽与实际的内存带宽的比较是通过Global Memory Load Efficiency和Global Memory Store Efficiency的度量来报告的。
 
 
-# Chapter13 内存优化 Memory Optimizations
+# Chapter13 内存优化 Memory Optimizations 
 
 内存优化是性能优化中最重要的领域。其目标是通过最大化带宽来最大化硬件的使用。带宽是通过使用尽可能多的快速存储器和尽可能少的慢速存储器来实现的。本章讨论了主机和设备上的各种内存，以及如何更好地设置数据项来有效地使用内存。
+
+## 13.1 Host的Device的数据传输
+
+首先，device memory和GPU之间的带宽（上文中提到的V100 898GB/s）远高于host memory和device memory之间的带宽（16GB/s  pcie x16 Gen3）。
+

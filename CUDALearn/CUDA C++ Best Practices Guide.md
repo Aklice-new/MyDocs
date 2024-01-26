@@ -66,5 +66,95 @@ $$((2048 ^ 2 \div 4 \times 2) \div 10^9) \div time$$
 
 ## 13.1 Host的Device的数据传输
 
+关于Host和Device的数据传输，看看这篇blog，感觉很不错[Nvidia Blog](herf=https://developer.nvidia.com/blog/how-optimize-data-transfers-cuda-cc/)。
+
 首先，device memory和GPU之间的带宽（上文中提到的V100 898GB/s）远高于host memory和device memory之间的带宽（16GB/s  pcie x16 Gen3）。
+
+### 13.1.1 Pinned Memory (锁页内存)
+
+一般情况下GPU不能直接访问主机内存中的数据，在进行数据传输的时候，需要先在主机上分配一个临时的page-locked memory(pinned memory)， 然后将主机的数据copy到这块区域内，然后再将这块区域内的数据transfer到设备上。
+
+![Alt text](assert/CUDA_C++_BEST_GUIDE/pinned_memory.png)
+
+如上图所示，在左图中，发生了两次拷贝，我们可以完全避免这次拷贝，然后直接使用cudaHostAlloc() / cudaMallocHost() 直接申请这片pinned memory并避免了一次拷贝。在进行数据传输的时候，仍然可以使用cudaMemcpy()进行数据拷贝。
+合理使用pinned memory可以有效的提高数据传输的带宽，但是过度的使用，会造成性能的下降，因为它减少了操作系统和其他程序的内存可使用量。
+
+### 13.1.2 通过Stream来并发数据传输
+
+#### 13.1.2.1 并发Device数据传输和Host计算
+在使用cudaMemcpy()的时候，会强制进行阻塞，也就是说，当数据传输完成后才会将控制权返回给主机，ercudaMemcpyAsync()是非阻塞的，控制权立即返回给主机，在调用时额外多了一个参数 stream id。流就是在gpu执行的所有操作的载体，包括数据传输、kernel等。
+
+```cpp
+// Overlapping computation and data transfers
+cudaMemcpyAsync(a_d, a_h, size, cudaMemcpyHostToDevice, 0); //异步传输数据，并且不阻塞主机， by stream0
+kernel<<<grid, block>>>(a_d); // 启动kernel by default stream 0
+cpuFunction();                // 执行主机计算
+```
+
+这里使用的是都是stream 0同一个流，在流内部保证操作按顺序进行， 所以这里会在数据拷贝完成后进行kernel中的计算，不需要显示的进行同步。通过这个例子可以将数据传输和主机的计算并行起来。
+#### 13.1.2.1 并发Device数据拷贝和Device kernel execute
+
+在上面的例子中拷贝数据和启动kernel本身就是需要顺序去执行的，同时还可以并行数据传输和kernel的执行，这种特性可以通过cudaDeviceProp().asynEngineCount来查询。通过设置不同的stream id就可以让数据传输和kernel的执行并发的去执行，但是这里需要**注意**的一点是，此时，这里不能使用default stream(Stream 0)，由于默认流本身具有一定的特性：在设备上其他流的工作没完成之前，默认流的工作不会开始，同时默认流的工作没结束之前，其他新的流的工作也不能开始。
+
+通过这种特性，就可以将一些大块的、可进行划分的数据划分为几个部分，然后分开去进行数据传输和kernel的执行，达到并发的效果。
+
+
+```cpp
+size=N*sizeof(float)∕nStreams; 
+for (i=0; i<nStreams; i++) { 
+    offset = i*N∕nStreams; cudaMemcpyAsync(a_d+offset, a_h+offset, size, dir, stream[i]); 
+    kernel<<<N∕(nThreads*nStreams), nThreads, 0, stream[i]>>>(a_d+offset); 
+}
+```
+![Alt text](assert/CUDA_C++_BEST_GUIDE/overlapping_data_transfer.png)
+
+
+以上是overlapping之后的效果。
+
+### 13.1.3 零拷贝 (Zero copy)
+
+Zero copy使得GPU可以直接访问主机的内存，
+
+```cpp
+float *a_h, *a_map; 
+... 
+cudaGetDeviceProperties(&prop, 0); 
+if (!prop.canMapHostMemory) 
+    exit(0); 
+cudaSetDeviceFlags(cudaDeviceMapHost); 
+cudaHostAlloc(&a_h, nBytes, cudaHostAllocMapped); cudaHostGetDevicePointer(&a_map, a_h, 0); 
+kernel<<<gridSize, blockSize>>>(a_map);
+
+```
+零拷贝避免了使用stream进行传输，GPU在运行时，直接访问的是主机中的内存区域。
+
+### 13.1.4 Unified Virtual Address(UVA) 统一虚拟寻址
+主机和设备可以共享同一个虚拟地址。
+
+
+### 讨论： 关于使用pinned memory,not mapped (页锁内存)和mapped，pinned memory(Zero copy)的情况区别：
+
+ [stackoverflow上的讨论](https://stackoverflow.com/questions/5209214/default-pinned-memory-vs-zero-copy-memory)
+简单概括下高赞回答：
+- Zero copy：
+  - GPU本身没有内存了，只能使用RAM。
+  - 只加载一次数据，但是需要对其执行大量的计算，并且隐藏内存传输延迟。
+  - 数据并不适合GPU。
+- pinned memory：
+  - 当您多次加载或存储数据时。例如：您有多个后续内核，分步执行工作 - 无需每次都从主机加载数据。
+  - 没有太多的计算需要执行，并且加载延迟不会被很好地隐藏
+
+## 13.2 Device Memory 设备内存
+
+设备内存中有不同的部分，每一部分都为了特定的功能而设计的。
+
+![Alt text](assert/CUDA_C++_BEST_GUIDE/device_memory.png)
+
+不同的内存访问延迟：Global > local > texture > constant > shared > register 
+
+
+
+
+
+
 

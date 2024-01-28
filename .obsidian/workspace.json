@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242.5,
-    "collapsed": true
+    "width": 242.5
   },
   "right": {
     "id": "2dcf9fa4a1ac9231",
@@ -150,8 +149,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -170,8 +168,9 @@
   },
   "active": "b641d059f52eacfb",
   "lastOpenFiles": [
-    "assets/3d_gaussian_2.png",
+    "CUDALearn/assert/CUDA_C++_BEST_GUIDE/pinned_memory.png",
     "CUDALearn/CUDA C++ Best Practices Guide.md",
+    "assets/3d_gaussian_2.png",
     "assets/3d_gaussian_1.png",
     "CPP/morden C++.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",

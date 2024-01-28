@@ -152,6 +152,83 @@ kernel<<<gridSize, blockSize>>>(a_map);
 
 不同的内存访问延迟：Global > local > texture > constant > shared > register 
 
+### 13.2.1 针对Global Memory访问的合并优化
+
+在Global Memory上的加载和访问操作会被设备优化成为事务，简单来说就是可以将一个block中的一个warp内的操作进行合并，成为一个请求，然后进行内存的访问，从而优化带宽。
+
+这里有一个关于Memory Coalescing的讨论[stackoverflow连接](https://stackoverflow.com/questions/5041328/in-cuda-what-is-memory-coalescing-and-how-is-it-achieved)
+
+#### 13.2.1.1 简单的合并访存的例子
+
+在compute capability 6.0及以上的设备上，一个warp内的所有访问内存在操作都被合并为32byte-transaction。
+
+
+
+![global_memory_coalescing_simple_pattern](assert/CUDA_C++_BEST_GUIDE/global_memory_coalescing_simple_pattern.png)
+
+假设目前有个block内的线程要访问一个4-byte的数据，此时就会发生memory coalescing，在block内线程是被划分进warp中进行执行的（一般一个warp内32个threads），那么这个warp内就有32 * 4这么多的访问需要，如果不进行合并，那么要进行32次访问操作，但是是经过32byte-transaction合并后，只进行4次访问操作（如上图）。
+
+#### 13.2.1.2 连续但访问未对齐
+
+如果说warp内的访问的内存区域是连续的，但是并不是和32-byte对齐的话，那么就会进行5次 32byte-transaction操作。可能是访问的区域有offset，然后导致和32byte并不对齐，然后就会多取一个区域。
+
+![global_memory_coalescing_misalignment](assert/CUDA_C++_BEST_GUIDE/global_memory_coalescing_misalignment.png)
+
+#### 13.2.1.3 访问未对齐的结果
+
+如果访问未对齐，那么会如上图一样多发生一次32byte-transaction，就会造成额外的访问操作，导致有效带宽下降。
+
+```cpp
+__global__ void offsetCopy(float *odata, float* idata, int offset) {
+	int xid = blockIdx.x * blockDim.x + threadIdx.x + offset; //注意这里的offset，就是导致访问未对齐的原因。
+    odata[xid] = idata[xid]; 
+}
+```
+
+当offset为0或者为8（$4 \times 8 = 32yte$）的倍数时，会发生4次32byte-transaction，当为其他的时候就会发生5次，所以理论上来说有效带宽会变为之前的80%，但是在实验中因为相邻的warp之间会保留cache，所以有效带宽变为了原来的90%，但是足以说明问题。
+
+TODO： add code example and result
+
+#### 13.2.1.4 strides access 按步访问
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

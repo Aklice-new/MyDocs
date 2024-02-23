@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
+                "file": "2024-02-23.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
+                "file": "2024-02-23.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
+                "file": "2024-02-23.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDALearn/CUDA C++ Best Practices Guide.md"
+                "file": "2024-02-23.md"
               }
             }
           },
@@ -168,9 +168,10 @@
   },
   "active": "b641d059f52eacfb",
   "lastOpenFiles": [
+    "CUDALearn/CUDA C++ Best Practices Guide.md",
+    "2024-02-23.md",
     "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
     "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
-    "CUDALearn/CUDA C++ Best Practices Guide.md",
     "CUDALearn/assert/CUDA_C++_BEST_GUIDE/pinned_memory.png",
     "assets/3d_gaussian_2.png",
     "assets/3d_gaussian_1.png",

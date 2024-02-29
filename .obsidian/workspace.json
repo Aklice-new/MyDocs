@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-02-23.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4103b0bfa4760641",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2024-02-23.md",
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-02-23.md",
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-02-23.md",
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-02-23.md"
+                "file": "CUDALearn/CUDA C++ Best Practices Guide.md"
               }
             }
           },
@@ -179,11 +166,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "4103b0bfa4760641",
+  "active": "87eabf330fa52f35",
   "lastOpenFiles": [
-    "CUDALearn/CUDA C++ Best Practices Guide.md",
     "2024-02-23.md",
+    "CUDALearn/CUDA C++ Best Practices Guide.md",
     "CUDALearn/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.md",
+    "CUDALearn/instant-ngp阅读.md",
     "CUDALearn/高性能CUDA应用设计与开发-方法与最佳实践.md",
     "CUDALearn/assert/CUDA_C++_BEST_GUIDE/pinned_memory.png",
     "assets/3d_gaussian_2.png",
@@ -191,7 +179,6 @@
     "CPP/morden C++.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/c++11_cuda.md",
     "CUDALearn/Cuda Samples 11.8/0_Introduction/clock.md",
-    "CUDALearn/instant-ngp阅读.md",
     "PathSim.md",
     "2023-06-14.md",
     "2023-06-12.md",

@@ -227,6 +227,25 @@ hitRatio描述的是在全局内存区域中，申请的L2 Cache这片区域内�
 
 共享内存也是GPU上的一片区域，每个block都有一片这样的区域，block中的thread可以共享这片区域。相比于global memory，在没有线程冲突的情况下拥有更高的带宽和更低的延迟。
 
+在申请使用共享内存的时候有两种方式：静态共享内存和动态共享内存。
+静态共享内存可以在kernel中直接通过
+```cpp
+__shared__ float shared_A[SIZE]; // 这里SIZE必须是静态常量，不能是运行时确定的值。
+```
+动态共享内存需要现在kernel中声明一下：
+```cpp
+extern __shared_ float shared_A[]； //这里可以暂时不指定SIZE，在kernel启动的时候传入size大小
+
+///// 如下
+kernel<<<grid_size, block_size, NS, stream_t>>> //这里的NS是除过kernel中的静态贡献内存额外指定的一个动态共享内存的大小，
+                                                // 同时只能在kernel中使用extern 指定一个共享内存大小，多个的话实际上会共用一片区域，
+                                                
+// 如果需要多个共享内存区域，则需要手动自己划分：
+extern __shared__ int s[];
+int *integerData = s;                        // nI ints
+float *floatData = (float*)&integerData[nI]; // nF floats
+char *charData = (char*)&floatData[nF];      // nC chars
+```
 #### 13.2.3.1 Shared Memory and Memory Bank
 
 为了提高并发访问的带宽，shared memory被分成了相同大小且可以同时访问的bank，因此，在访问shared memory中的不同bank时就可以实现并发访问，但是当访问相同的bank时就会发生bank conflict，线程就会失去并行的性质，被转换为串行的、无冲突的方式执行。但是这里有种情况时例外：当一个warp中的线程对同一片shared memory进行访问时，就会产生广播，即访问一次所有的线程都会知晓。

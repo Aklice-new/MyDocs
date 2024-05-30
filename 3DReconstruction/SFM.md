@@ -2,7 +2,7 @@
 
 ## Problem definition and ambiguities
 
-<img title="" src="file:///home/aklice/.config/marktext/images/2024-05-30-20-35-50-sfm_problem.png" alt="" width="384" data-align="center">
+<img title="" src="./imgs/sfm_problem.png" alt="" width="384" data-align="center">
 
 给定几个已知的相机，然后每张图像中有一些共视点，如何估计出来相机的**内外参数**。
 

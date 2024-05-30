@@ -4,15 +4,17 @@
 
 ## 平面扫描算法 Plane Sweeping
 
-<img src="file:///home/aklice/.config/marktext/images/2024-05-30-13-29-32-plane_sweeping.png" title="" alt="" data-align="inline">
+<img src="./imgs/plane_sweeping.png" title="" alt="" data-align="inline">
 
 给定多个相机，然后通过以主相机为主，依次的多个平面（不同深度）进行测试，来得到每个像素点的深度值。
 
-<img src="file:///home/aklice/.config/marktext/images/2024-05-30-13-35-50-projection_1.png" title="" alt="" width="247">         <img src="file:///home/aklice/.config/marktext/images/2024-05-30-13-36-06-projection_2.png" title="" alt="" width="252">         <img src="file:///home/aklice/.config/marktext/images/2024-05-30-13-36-13-projection_3.png" title="" alt="" width="250">
+<img src="./imgs/projection_1.png" title="" alt="" width="247">         
+<img src="./imgs/projection_2.png" title="" alt="" width="252">         
+<img src="./imgs/projection_3.png" title="" alt="" width="250">
 
 每一个深度值都对应一个平面，将所有的图像通过Homography变换到该平面，然后计算对应的像素值的方差，认为方差最小的深度值即为正确的深度值。
 
-<img title="" src="file:///home/aklice/.config/marktext/images/2024-05-30-13-36-58-projection_4.png" alt="" width="364" data-align="center">
+<img title="" src="./imgs/projection_4.png" alt="" width="364" data-align="center">
 
 选择其中方差最小的一个深度值，作为该点的深度值。
 

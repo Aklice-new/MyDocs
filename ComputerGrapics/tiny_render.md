@@ -238,9 +238,7 @@ $$
  E_{1x} & E_{1y} & E_{1_z} \\
  E_{2x} & E_{2y} & E_{2_z}
 \end{bmatrix}  
-= 
-
-\begin{bmatrix} 
+= \begin{bmatrix} 
  \Delta U_1 & \Delta V_1 \\
  \Delta U_2 & \Delta V_2
 \end{bmatrix} 

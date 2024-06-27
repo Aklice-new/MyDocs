@@ -148,18 +148,15 @@ $$
 之后我们再将这个2D的中心坐标重投影回3D空间中，用于计算该像素插值之后的信息。
 
 设$A, B,C,P$分别是三角形的三个顶点和三角形中的一个点，其投影之后的点为$A',B',C',P'$，通过透视投影变换建立两者的联系:
-
 $$
 P' = \frac{1}{z*r + 1}*P
 $$
-
 其中z表示点在三维空间中的深度，r是一个常数因子，用于调整透视的程度。
 
 设在3D空间中的重心坐标为$\alpha, \beta, \gamma$， 投影之后2D空间中的重心坐标为$\alpha',\beta',\gamma'$。则有：
 
 $$
 P = [A,B,C][\alpha, \beta,\gamma]^T \\ P' = [A',B',C'][\alpha', \beta',\gamma']^T\\
-
 $$
 
 联合得:
@@ -238,9 +235,7 @@ $$
  E_{1x} & E_{1y} & E_{1_z} \\
  E_{2x} & E_{2y} & E_{2_z}
 \end{bmatrix}  
-= 
-
-\begin{bmatrix} 
+= \begin{bmatrix} 
  \Delta U_1 & \Delta V_1 \\
  \Delta U_2 & \Delta V_2
 \end{bmatrix} 

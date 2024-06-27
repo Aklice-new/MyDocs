@@ -1130,11 +1130,3 @@ RecurrentLayer就是将RNN这种结构进行抽象，其内部unroll_net包含�
 ### 5.2  RNNLayer
 
 ### 5.3 LSTMLayer
-
-## 6. Other Layers
-
-### 6.1 BatchNormalize
-
-### 6.2 LayerNormalize
-
-### 6.3 Group Normalize

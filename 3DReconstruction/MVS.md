@@ -26,8 +26,6 @@
 
 通过融合多个视角的depth图，来得到sdf，然后再得到通过marching cube得到mesh。
 
-
-
 ## Patch-based multi-view stereo(PMVS)
 
 1. Detect keypoints
@@ -36,12 +34,6 @@
 4. Use visibility constraints to filter out false matches
 5. Perform surface reconstruction
 
-
-
-
-
-
-
 ## DeepLearning For MVS
 
 <img src="file:///home/aklice/.config/marktext/images/2024-05-30-16-35-37-dl_with_sfm_mvs_1.png" title="" alt="" width="425">                <img src="file:///home/aklice/.config/marktext/images/2024-05-30-16-35-44-dl_with_sfm_mvs_2.png" title="" alt="" width="371"> 
@@ -49,5 +41,3 @@
 ## DeepLearning For SFM
 
 ![](/home/aklice/.config/marktext/images/2024-05-30-16-36-06-dl_with_sfm_mvs_3.png)
-
-
